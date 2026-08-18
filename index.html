@@ -1,0 +1,598 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendario | Aprendices Casildenses</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef3f9;
+            color: #172033;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(135deg, #001b50, #0066c7);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.20);
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            letter-spacing: 4px;
+            line-height: 1;
+        }
+
+        header p {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .contenedor {
+            width: 92%;
+            max-width: 1050px;
+            margin: 45px auto;
+        }
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .titulo h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #003b88;
+            font-size: 38px;
+            letter-spacing: 2px;
+        }
+
+        .linea {
+            height: 3px;
+            background: #0066c7;
+            flex: 1;
+        }
+
+        .partidos {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .partido {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #dce4ef;
+            box-shadow: 0 5px 18px rgba(0, 40, 90, 0.10);
+            overflow: hidden;
+            transition: .25s ease;
+        }
+
+        .partido:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 40, 90, 0.18);
+        }
+
+        .numero {
+            width: 48px;
+            height: 48px;
+            background: #003b88;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 27px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 10px 0;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 25px 35px 30px;
+        }
+
+        .equipo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .local {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .visitante {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .escudo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .nombre {
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .aprendices {
+            color: #003b88;
+        }
+
+        .vs {
+            text-align: center;
+        }
+
+        .vs span {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #0066c7;
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 48px;
+            }
+
+            .contenido {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 20px;
+            }
+
+            .local,
+            .visitante {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .vs {
+                order: 2;
+            }
+
+            .equipo {
+                flex-direction: column;
+            }
+
+            .escudo {
+                width: 65px;
+                height: 65px;
+            }
+
+            .nombre {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CALENDARIO 2026</h1>
+    <p>Aprendices Casildenses</p>
+</header>
+
+<main class="contenedor">
+
+    <div class="titulo">
+        <h2>PARTIDOS</h2>
+        <div class="linea"></div>
+    </div>
+
+    <section class="partidos">
+
+        <!-- 1 -->
+        <div class="partido">
+            <div class="numero">01</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">UNIDOS DE ZAVALLA</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2 -->
+        <div class="partido">
+            <div class="numero">02</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">MATIENZO</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 3 -->
+        <div class="partido">
+            <div class="numero">03</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">ATLETICO SANFORD</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 4 -->
+        <div class="partido">
+            <div class="numero">04</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">ATLETICO CHABAS</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 5 -->
+        <div class="partido">
+            <div class="numero">05</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">HURACAN DE CASILDA</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 6 -->
+        <div class="partido">
+            <div class="numero">06</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">UNION CASILDENSE</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 7 -->
+        <div class="partido">
+            <div class="numero">07</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">UNION DEPORTIVA</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 8 -->
+        <div class="partido">
+            <div class="numero">08</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">RACING DE VILLADA</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 9 -->
+        <div class="partido">
+            <div class="numero">09</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">9 DE JULIO</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 10 -->
+        <div class="partido">
+            <div class="numero">10</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">ATLETICO PUJATO</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 11 -->
+        <div class="partido">
+            <div class="numero">11</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">ALIANZA DEPORTIVA</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 12 -->
+        <div class="partido">
+            <div class="numero">12</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">HURACAN DE CHABAS</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 13 -->
+        <div class="partido">
+            <div class="numero">13</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <div class="nombre">ALUMNI</div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 14 -->
+        <div class="partido">
+            <div class="numero">14</div>
+            <div class="contenido">
+
+                <div class="equipo local">
+                    <img class="escudo"
+                         src="APRENDICES.jpg"
+                         alt="Escudo Aprendices Casildenses">
+
+                    <div class="nombre aprendices">
+                        APRENDICES CASILDENSES
+                    </div>
+                </div>
+
+                <div class="vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="equipo visitante">
+                    <div class="nombre">BELGRANO</div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
+```
